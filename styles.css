@@ -29,11 +29,13 @@ nav {
 
 nav ul {
     list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Added for responsiveness */
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+    margin: 10px; /* Adjusted for responsiveness */
 }
 
 nav ul li a {
@@ -90,13 +92,12 @@ nav ul li a:hover {
 
 #tech-stack img {
     width: 100px;
-    margin: 10 10px;
+    margin: 10px;
 }
 #github, #linkedin{
     width: 25px;
-    margin: 10 10px;
+    margin: 10px;
 }
-
 
 /* About Me Section */
 #about {
@@ -109,7 +110,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Added for responsiveness */
 }
 
 .about-content .profile-pic {
@@ -148,7 +149,7 @@ nav ul li a:hover {
     display: inline-block;
     background-color: #0056b3;
     color: #fff;
-    padding: 10px 200px;
+    padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
     font-size: 1.2em;
@@ -176,12 +177,12 @@ nav ul li a:hover {
 
 .project-btn {
     display: inline-block;
-    width: 400px; /* Set a fixed width for the buttons */
+    width: 100%; /* Adjusted for responsiveness */
+    max-width: 400px; /* Max width for larger screens */
     background-color: #730371;
     color: white;
-    padding: 1px 10px;
-    margin: 0px 0;
-    text-align: center; /* Center the text */
+    padding: 15px 10px; /* Adjusted padding */
+    text-align: center;
     text-decoration: none;
     transition: background-color 0.3s ease;
     font-size: 1.5rem;
@@ -200,7 +201,7 @@ nav ul li a:hover {
 .skills-grid {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Added for responsiveness */
 }
 
 .skill {
@@ -252,9 +253,30 @@ footer ul li a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #hero h1 {
+        font-size: 2.5em;
+    }
+
+    #hero h2 {
+        font-size: 1.5em;
+    }
+
+    #cta button {
+        padding: 10px 15px;
+        margin: 5px;
+    }
+
     .about-content {
         flex-direction: column;
-        text-align: center;
     }
 
     .about-content .profile-pic {
@@ -264,5 +286,33 @@ footer ul li a:hover {
     .about-content .about-text {
         text-align: center;
     }
+
+    .skills-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #projects ul {
+        padding: 0;
+    }
+
+    .project-btn {
+        width: 90%;
+        max-width: none;
+    }
 }
 
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 2em;
+    }
+
+    #hero h2 {
+        font-size: 1.2em;
+    }
+
+    .contact-btn {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
